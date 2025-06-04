@@ -13,26 +13,26 @@ import {
   ImageBackground, 
   Image 
 } from 'react-native';
-const API_URL = 'http://YOUR_PC_LOCAL_IP:3000'; // replace with your PC's IP address
+const API_URL = 'http://YOUR_PC_LOCAL_IP:3000'; 
 
 fetch(`${API_URL}/recipes`)
   .then(res => res.json())
   .then(data => {
     console.log(data);
-    // Use this data to update your React state or display recipes
+   
   })
   .catch(err => console.error(err));
 
 
-// Type definition for each recipe item
+
 type Item = {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;  // Added imageUrl for each recipe
+  imageUrl: string;  
 };
 
-// Initial sample data with images
+
 const initialData: Item[] = [
   { id: '1', title: 'Spaghetti Carbonara', description: 'Creamy pasta with pancetta', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL86-t7IGXR8gUnxRLwbgzmv-UkLxSmqRkBw&s' },
   { id: '2', title: 'Chicken Curry', description: 'Spicy and flavorful curry', imageUrl: 'https://urbanblisslife.com/wp-content/uploads/2024/04/Filipino-Chicken-Curry.jpg' },
@@ -87,7 +87,7 @@ export default function Explore() {
         id: Math.random().toString(),
         title: currentItem.title,
         description: currentItem.description,
-        imageUrl: currentItem.imageUrl, // Saving imageUrl
+        imageUrl: currentItem.imageUrl, 
       };
       setData(prevData => [newItem, ...prevData]);
     }
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: adds overlay for better text visibility
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
     padding: 20,
     borderRadius: 10,
     width: '100%',
