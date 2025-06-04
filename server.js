@@ -5,15 +5,15 @@ const cors = require('cors');
 
 
 const app = express();
-app.use(cors());              // Allow cross-origin requests (from Expo app)
-app.use(express.json());      // Parse JSON bodies
+app.use(cors());              
+app.use(express.json());      
 
 // MySQL connection config
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'razakimlie.1911836',  // your password
-  database: 'recipe_box',           // your database name
+  password: 'razakimlie.1911836',  
+  database: 'recipe_box',          
 });
 
 db.connect(err => {
